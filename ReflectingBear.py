@@ -58,7 +58,7 @@
 # 
 # If you have further questions about submissions or programming assignments, here is a [list](https://www.coursera.org/learn/linear-algebra-machine-learning/discussions/weeks/1/threads/jB4klkn5EeibtBIQyzFmQg) of Q&A. You can also raise an issue on the discussion forum. Good luck!
 
-# In[3]:
+# In[8]:
 
 
 # PACKAGE
@@ -69,7 +69,7 @@ from numpy import transpose
 from readonly.bearNecessities import *
 
 
-# In[6]:
+# In[11]:
 
 
 # GRADED FUNCTION
@@ -87,7 +87,7 @@ def build_reflection_matrix(bearBasis) : # The parameter bearBasis is a 2×2 mat
     TE = np.array([[1, 0],
                    [0, -1]])
     # Combine the matrices E and TE to produce your transformation matrix.
-    T = TE @ transpose(E)
+    T = E @ TE @ inv(E)
     # Finally, we return the result. There is no need to change this line.
     return T
 
@@ -101,7 +101,7 @@ def build_reflection_matrix(bearBasis) : # The parameter bearBasis is a 2×2 mat
 # If you have correctly implemented the function above, you will also see Bear's reflection in his mirror.
 # The orange axes are Bear's basis, and the pink axes are the mirror's orthonormal basis.
 
-# In[7]:
+# In[12]:
 
 
 # First load Pyplot, a graph plotting library.
